@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>ISMC Weight Chart and ISMB MS Channel Weight Calculator</title>
+</head>
+
+<body class="home-v2">
+    <!-- Blog Section Start -->
+    <div class="blog-classic-sec pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="service-details-desc">
+                        <div class="service-details-text">
+                            <h3>Structural Steel Channel Weight Calculator</h3>
+                            <table bgcolor="Transparent" border="2" frame="border">
+                                <tr align="left">
+                                    <td class="style1"><span id="MainContent_ContentPlaceHolder1_lblgrade"
+                                            style="display:inline-block;width:170px;">Grade of Raw Material</span> </td>
+                                    <td class="style13"><select
+                                            name="ctl00$MainContent$ContentPlaceHolder1$dd_grade_raw_mat"
+                                            id="MainContent_ContentPlaceHolder1_dd_grade_raw_mat"
+                                            onChange="calculate()">
+                                            <option value="Select">Select</option>
+                                            <option value="Aluminium">Aluminium</option>
+                                            <option value="Brass IS 319">Brass IS 319</option>
+                                            <option value="Carbon Steel">Carbon Steel</option>
+                                            <option value="Cast Iron">Cast Iron</option>
+                                            <option value="Copper">Copper</option>
+                                            <option value="EN-19">EN-19</option>
+                                            <option value="EN-1A">EN-1A</option>
+                                            <option value="EN-24">EN-24</option>
+                                            <option value="EN-8D">EN-8D</option>
+                                            <option value="EPDM Rubber">EPDM Rubber</option>
+                                            <option value="Fe 11">Fe 11</option>
+                                            <option value="Fe 12">Fe 12</option>
+                                            <option value="Fe 24">Fe 24</option>
+                                            <option value="Hestalloy C-276">Hestalloy C-276</option>
+                                            <option value="Inconel 600">Inconel 600</option>
+                                            <option value="Inconel 610">Inconel 610</option>
+                                            <option value="Inconel 625">Inconel 625</option>
+                                            <option value="Mild Steel">Mild Steel</option>
+                                            <option value="Natural Rubber">Natural Rubber</option>
+                                            <option value="SBR Rubber">SBR Rubber</option>
+                                            <option value="Silver">Silver</option>
+                                            <option value="SS 201">SS 201</option>
+                                            <option value="SS 300 Series">SS 300 Series</option>
+                                            <option value="SS 303">SS 303</option>
+                                            <option value="SS 304">SS 304</option>
+                                            <option value="SS 304L">SS 304L</option>
+                                            <option value="SS 308">SS 308</option>
+                                            <option value="SS 309">SS 309</option>
+                                            <option value="SS 309L">SS 309L</option>
+                                            <option value="SS 310">SS 310</option>
+                                            <option value="SS 316">SS 316</option>
+                                            <option value="SS 316L">SS 316L</option>
+                                            <option value="SS 321">SS 321</option>
+                                            <option value="SS 400 Series">SS 400 Series</option>
+                                            <option value="SS 410 ">SS 410</option>
+                                            <option value="SS 416 ">SS 416</option>
+                                            <option value="SS 446">SS 446</option>
+                                            <option value="ST-37">ST-37</option>
+                                            <option value="ST-52">ST-52</option>
+                                            <option value="Steel A105">Steel A105</option>
+                                            <option value="Steel A106 Gr.B">Steel A106 Gr.B</option>
+                                            <option value="Titanium">Titanium</option>
+                                        </select></td>
+                                    <td class="style13">
+                                        <h6 id="header" style="color: #008000; width: auto">Old Header</h6>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style1"><span id="MainContent_ContentPlaceHolder1_lblrawtype"
+                                            style="display:inline-block;width:170px;">Type of Raw Material</span> </td>
+                                    <td class="style13"><select
+                                            name="ctl00$MainContent$ContentPlaceHolder1$dd_type_raw_material"
+                                            id="MainContent_ContentPlaceHolder1_dd_type_raw_material"
+                                            onChange="changelabel()">
+                                            <option value="Select">Select</option>
+                                            <option value="Round">Round</option>
+                                            <option value="Square">Square</option>
+                                            <option value="Rectangle">Rectangle</option>
+                                            <option value="Hexagonal">Hexagonal</option>
+                                            <option value="Octagonal">Octagonal</option>
+                                            <option value="Sheet">Sheet</option>
+                                            <option value="Pipe Round">Pipe Round</option>
+
+                                            <option value="Pipe Square">Pipe Square</option>
+                                            <option value="Pipe Rectangular">Pipe Rectangular</option>
+                                            <option value="Angle">Angle</option>
+                                            <option value="Chanel">Chanel</option>
+                                            <option value="Tee">Tee</option>
+                                            <option value="Beam">Beam</option>
+                                        </select>
+                                    </td>
+                                    <td class="style13">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="style1">&nbsp;</td>
+                                    <td class="style13">&nbsp;</td>
+                                    <td class="style13">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="style1"><span id="MainContent_ContentPlaceHolder1_lblinputsize"
+                                            style="display:inline-block;width:170px;">Input Size of Raw Material</span>
+                                    </td>
+                                    <td class="style13">&nbsp;</td>
+                                    <td class="style13">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="style1"><img id="shape_image"
+                                            alt="Channel Weight Calculator / Online MS Channel Weight Calculator" />
+                                    </td>
+                                    <td class="style13" colspan="2">
+                                        <table style="width: 75%">
+                                            <tr>
+                                                <td class="style2" width="100"><span
+                                                        id="MainContent_ContentPlaceHolder1_lbl_1">Diameter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    </span> &nbsp;</td>
+                                                <td><input name="ctl00$MainContent$ContentPlaceHolder1$txt_1"
+                                                        type="text" maxlength="10"
+                                                        id="MainContent_ContentPlaceHolder1_txt_1"
+                                                        onKeyDown="return validate_num(event);"
+                                                        onKeyUp="calculate();" />
+                                                </td>
+                                                <td><select name="ctl00$MainContent$ContentPlaceHolder1$ddunit1"
+                                                        id="MainContent_ContentPlaceHolder1_ddunit1"
+                                                        onChange="calculate()">
+                                                        <option value="MM">MM</option>
+                                                        <option value="Inches">Inches</option>
+                                                        <option value="Feet">Feet</option>
+                                                        <option value="Yard">Yard</option>
+                                                        <option value="CM">CM</option>
+                                                        <option value="MTR">MTR</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="style2" width="100"><span
+                                                        id="MainContent_ContentPlaceHolder1_lbl_2">Length</span> </td>
+                                                <td><input name="ctl00$MainContent$ContentPlaceHolder1$txt_2"
+                                                        type="text" maxlength="10"
+                                                        id="MainContent_ContentPlaceHolder1_txt_2"
+                                                        onKeyDown="return validate_num(event);"
+                                                        onKeyUp="calculate();" />
+                                                </td>
+                                                <td><select name="ctl00$MainContent$ContentPlaceHolder1$ddunit2"
+                                                        id="MainContent_ContentPlaceHolder1_ddunit2"
+                                                        onChange="calculate()">
+                                                        <option value="MM">MM</option>
+                                                        <option value="Inches">Inches</option>
+                                                        <option value="Feet">Feet</option>
+                                                        <option value="Yard">Yard</option>
+                                                        <option value="CM">CM</option>
+                                                        <option value="MTR">MTR</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="style2" width="100"><span
+                                                        id="MainContent_ContentPlaceHolder1_lbl_3">Label</span> </td>
+                                                <td><input name="ctl00$MainContent$ContentPlaceHolder1$txt_3"
+                                                        type="text" maxlength="10"
+                                                        id="MainContent_ContentPlaceHolder1_txt_3"
+                                                        onKeyDown="return validate_num(event);"
+                                                        onKeyUp="calculate();" />
+                                                </td>
+                                                <td><select name="ctl00$MainContent$ContentPlaceHolder1$ddunit3"
+                                                        id="MainContent_ContentPlaceHolder1_ddunit3"
+                                                        onkeydown="return validate_num(event);" onChange="calculate()">
+                                                        <option value="MM">MM</option>
+                                                        <option value="Inches">Inches</option>
+                                                        <option value="Feet">Feet</option>
+                                                        <option value="Yard">Yard</option>
+                                                        <option value="CM">CM</option>
+                                                        <option value="MTR">MTR</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="style2" width="100"><span
+                                                        id="MainContent_ContentPlaceHolder1_lbl_4">Label</span> </td>
+                                                <td><input name="ctl00$MainContent$ContentPlaceHolder1$txt_4"
+                                                        type="text" maxlength="10"
+                                                        id="MainContent_ContentPlaceHolder1_txt_4"
+                                                        onKeyDown="return validate_num(event);"
+                                                        onKeyUp="calculate();" />
+                                                </td>
+                                                <td><select name="ctl00$MainContent$ContentPlaceHolder1$ddunit4"
+                                                        id="MainContent_ContentPlaceHolder1_ddunit4"
+                                                        onkeydown="return validate_num(event);" onChange="calculate()">
+                                                        <option value="MM">MM</option>
+                                                        <option value="Inches">Inches</option>
+                                                        <option value="Feet">Feet</option>
+                                                        <option value="Yard">Yard</option>
+                                                        <option value="CM">CM</option>
+                                                        <option value="MTR">MTR</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style1"><span id="MainContent_ContentPlaceHolder1_lblcutweight"
+                                            MaxLength="15">Cut Weight</span> </td>
+                                    <td class="style13"><input name="ctl00$MainContent$ContentPlaceHolder1$txt_cut_wght"
+                                            type="text" id="MainContent_ContentPlaceHolder1_txt_cut_wght" /> Grams.
+                                    </td>
+                                    <td class="style13">&nbsp;</td>
+                                </tr>
+                            </table>
+                            <h3>
+                                <script language="javascript" type="text/javascript" id="va">
+                                    // <![CDATA[
+
+                                    document.getElementById("MainContent_ContentPlaceHolder1_dd_type_raw_material")
+                                        .value = 'Chanel';
+                                    document.getElementById("MainContent_ContentPlaceHolder1_dd_type_raw_material")
+                                        .disabled = true;
+
+                                    var str = "Chanel Metal Calculator";
+                                    var url = "../indx-tst5445.html?id=" + str; // No question mark needed
+
+                                    xmlReq = new XMLHttpRequest();
+
+                                    xmlReq.open("POST.html", url, true);
+                                    xmlReq.send(str);
+
+
+
+                                    //Hide unwanted controls...
+
+                                    document.getElementById("MainContent_ContentPlaceHolder1_lbl_1").innerHTML = "";
+                                    document.getElementById("MainContent_ContentPlaceHolder1_lbl_2").innerHTML = "";
+                                    document.getElementById("MainContent_ContentPlaceHolder1_lbl_3").innerHTML = "";
+                                    document.getElementById("MainContent_ContentPlaceHolder1_lbl_4").innerHTML = "";
+                                    document.getElementById("MainContent_ContentPlaceHolder1_txt_1").style.display =
+                                        "none";
+                                    document.getElementById("MainContent_ContentPlaceHolder1_txt_2").style.display =
+                                        "none";
+                                    document.getElementById("MainContent_ContentPlaceHolder1_txt_3").style.display =
+                                        "none";
+                                    document.getElementById("MainContent_ContentPlaceHolder1_txt_4").style.display =
+                                        "none";
+                                    document.getElementById("MainContent_ContentPlaceHolder1_ddunit1").style.display =
+                                        "none";
+                                    document.getElementById("MainContent_ContentPlaceHolder1_ddunit2").style.display =
+                                        "none";
+                                    document.getElementById("MainContent_ContentPlaceHolder1_ddunit3").style.display =
+                                        "none";
+                                    document.getElementById("MainContent_ContentPlaceHolder1_ddunit4").style.display =
+                                        "none";
+                                    document.getElementById("shape_image").style.display = 'channel.gif';
+
+                                    changelabel();
+
+                                    function DoLength(value, unitType) {
+                                        //  alert('value before = ' + value+'  and unit type ='+unitType);
+                                        if (unitType == "CM")
+                                            value = value / 2.54;
+                                        if (unitType == "MTR")
+                                            value = (value * 100) / 2.54;
+                                        if (unitType == "MM")
+                                            value = (value / 10) / 2.54;
+                                        if (unitType == "Feet")
+                                            value = value * 12;
+                                        if (unitType == "Yard")
+                                            value = value * 36;
+                                        if (unitType == "Inches")
+                                            value = ((value / 10) / 2.54) * 25.4;
+
+                                        //  alert('value after = ' + value);
+
+                                        return value;
+                                    }
+                                    var flag_rec_exists;
+
+                                    function validate() {
+                                        if (document.getElementById("MainContent_ContentPlaceHolder1_txtitem").value ==
+                                            "") {
+                                            alert("Item Discription Cannot be Blank");
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txtitem").focus();
+                                            return false;
+                                        }
+                                        if (document.getElementById("MainContent_ContentPlaceHolder1_txtitem").value
+                                            .length < 1) {
+                                            alert("Item Discription length is Too small");
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txtitem").focus();
+                                            return false;
+                                        }
+                                        //check record exists
+
+                                        if (flag_rec_exists == "Record Exists in Database...") {
+                                            alert("Error! This Item Already exists in database.");
+                                            return false;
+                                        }
+
+                                        //  return chk_item();
+                                        //part no validation
+                                        if (document.getElementById("MainContent_ContentPlaceHolder1_txtpartno")
+                                            .value == "") {
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txtpartno").value =
+                                                "N/A";
+                                            //                alert("Part Number cannot be Blank");
+                                            //                document.getElementById("MainContent_ContentPlaceHolder1_txtpartno").focus();
+                                            //                return false;
+                                        }
+                                        //            if (document.getElementById("MainContent_ContentPlaceHolder1_txtpartno").value.length < 5) {
+                                        //                alert("Part Number is Too small");
+                                        //                document.getElementById("MainContent_ContentPlaceHolder1_txtpartno").focus();
+                                        //                return false;
+                                        //            }
+                                        //OEM part no. validation
+                                        if (document.getElementById("MainContent_ContentPlaceHolder1_txtoemprtno")
+                                            .value == "") {
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txtoemprtno")
+                                                .value = "N/A";
+                                        }
+                                        if (document.getElementById("MainContent_ContentPlaceHolder1_txtdrno").value ==
+                                            "") {
+                                            alert("Drawing Number Feild can not be blank");
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txtdrno").focus();
+                                            return false;
+                                        }
+                                        if (document.getElementById("MainContent_ContentPlaceHolder1_txtdrno").value
+                                            .length < 5) {
+                                            alert("Drawing Number is Too small");
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txtdrno").focus();
+                                            return false;
+                                        }
+
+
+
+
+                                        //grade of raw material 
+                                        if (document.getElementById("MainContent_ContentPlaceHolder1_dd_grade_raw_mat")
+                                            .selectedIndex == '0') {
+
+                                            alert("Please select a Grade of Raw Material");
+                                            document.getElementById("MainContent_ContentPlaceHolder1_dd_grade_raw_mat")
+                                                .focus();
+                                            return false;
+                                        }
+
+                                        //shape of raw material 
+                                        if (document.getElementById(
+                                                "MainContent_ContentPlaceHolder1_dd_type_raw_material").selectedIndex ==
+                                            '0') {
+
+                                            alert("Please select a Type of raw Material of Raw Material");
+                                            document.getElementById(
+                                                "MainContent_ContentPlaceHolder1_dd_type_raw_material").focus();
+                                            return false;
+                                        }
+                                        // Formula validations
+                                        var mat_type_calculate = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_dd_type_raw_material");
+                                        txt1_val = document.getElementById("MainContent_ContentPlaceHolder1_txt_1")
+                                            .value;
+                                        txt2_val = document.getElementById("MainContent_ContentPlaceHolder1_txt_2")
+                                            .value;
+                                        txt3_val = document.getElementById("MainContent_ContentPlaceHolder1_txt_3")
+                                            .value;
+                                        txt4_val = document.getElementById("MainContent_ContentPlaceHolder1_txt_4")
+                                            .value;
+                                        txt_result_val = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_txt_cut_wght").value;
+                                        //validate round object 1
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Round") {
+                                            if (txt1_val == "") {
+                                                alert('Please Enter Diameter');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_1")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt2_val == "") {
+                                                alert('Please Enter Length');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_2")
+                                                    .focus();
+                                                return false;
+                                            }
+
+                                        }
+                                        //validate square objects 2
+
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Square") {
+                                            if (txt1_val == "") {
+                                                alert('Please Enter Width');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_1")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt2_val == "") {
+                                                alert('Please Enter Length');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_2")
+                                                    .focus();
+                                                return false;
+                                            }
+
+                                        }
+
+                                        //validate Rectangle Objects 3
+
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Rectangle") {
+                                            if (txt1_val == "") {
+                                                alert('Please Enter Thickness');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_1")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt2_val == "") {
+                                                alert('Please Enter Width');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_2")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt3_val == "") {
+                                                alert('Please Enter Length');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_3")
+                                                    .focus();
+                                                return false;
+                                            }
+
+                                        }
+                                        //validate HEXAGONAL OBJECT 4
+
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Hexagonal") {
+                                            if (txt1_val == "") {
+                                                alert('Please Enter Diameter Acroos Flat');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_1")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt2_val == "") {
+                                                alert('Please Enter Length');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_2")
+                                                    .focus();
+                                                return false;
+                                            }
+
+                                        }
+                                        //validate OCTAGONAL OBJECT 5
+
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Octagonal") {
+                                            if (txt1_val == "") {
+                                                alert('Please Enter Diameter Acroos Flat');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_1")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt2_val == "") {
+                                                alert('Please Enter Length');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_2")
+                                                    .focus();
+                                                return false;
+                                            }
+
+                                        }
+
+                                        //validate SHEET Objects 6
+
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Sheet") {
+                                            if (txt1_val == "") {
+                                                alert('Please Enter Thickness');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_1")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt2_val == "") {
+                                                alert('Please Enter Width');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_2")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt3_val == "") {
+                                                alert('Please Enter Length');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_3")
+                                                    .focus();
+                                                return false;
+                                            }
+
+                                        }
+
+                                        //validate PIPE ROUND Objects 7
+
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Pipe Round") {
+                                            if (txt1_val == "") {
+                                                alert('Please Enter Outer Diameter');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_1")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt2_val == "") {
+                                                alert('Please Enter Wall Thickness of Pipe');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_2")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt3_val == "") {
+                                                alert('Please Enter Length');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_3")
+                                                    .focus();
+                                                return false;
+                                            }
+
+                                        }
+                                        //validate PIPE SQUARE Objects 8
+
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Pipe Square") {
+                                            if (txt1_val == "") {
+                                                alert('Please Enter Outer Diameter Across Flat');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_1")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt2_val == "") {
+                                                alert('Please Enter Wall Thickness of Pipe');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_2")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt3_val == "") {
+                                                alert('Please Enter Length');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_3")
+                                                    .focus();
+                                                return false;
+                                            }
+
+                                        }
+                                        //validate PIPE RECTANGULAR Objects 9
+
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Pipe Rectangular") {
+                                            if (txt1_val == "") {
+                                                alert('Please Enter Outer Width');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_1")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt2_val == "") {
+                                                alert('Please Enter Outer Height');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_2")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt3_val == "") {
+                                                alert('Please Enter Wall Thickness');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_3")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt4_val == "") {
+                                                alert('Please Enter Length');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_4")
+                                                    .focus();
+                                                return false;
+                                            }
+
+                                        }
+                                        //validate Angle Objects 10
+
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Angle") {
+                                            if (txt1_val == "") {
+                                                alert('Please Enter Width1');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_1")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt2_val == "") {
+                                                alert('Please Enter Width2');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_2")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt3_val == "") {
+                                                alert('Please Enter Wall Thickness');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_3")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt4_val == "") {
+                                                alert('Please Enter Length');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_4")
+                                                    .focus();
+                                                return false;
+                                            }
+
+                                        }
+                                        //validate Chanel Objects 11
+
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Chanel") {
+                                            if (txt1_val == "") {
+                                                alert('Please Enter Width');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_1")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt2_val == "") {
+                                                alert('Please Enter Height');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_2")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt3_val == "") {
+                                                alert('Please Enter Wall Thickness');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_3")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt4_val == "") {
+                                                alert('Please Enter Length');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_4")
+                                                    .focus();
+                                                return false;
+                                            }
+
+                                        }
+                                        //validate Tee Objects 12
+
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Tee") {
+                                            if (txt1_val == "") {
+                                                alert('Please Enter Width');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_1")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt2_val == "") {
+                                                alert('Please Enter Height');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_2")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt3_val == "") {
+                                                alert('Please Enter Wall Thickness');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_3")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt4_val == "") {
+                                                alert('Please Enter Length');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_4")
+                                                    .focus();
+                                                return false;
+                                            }
+
+                                        }
+                                        //validate Beam Objects 13
+
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Tee") {
+                                            if (txt1_val == "") {
+                                                alert('Please Enter Width');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_1")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt2_val == "") {
+                                                alert('Please Enter Height');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_2")
+                                                    .focus();
+                                                return false;
+                                            }
+
+                                            if (txt3_val == "") {
+                                                alert('Please Enter Wall Thickness');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_3")
+                                                    .focus();
+                                                return false;
+                                            }
+                                            if (txt4_val == "") {
+                                                alert('Please Enter Length');
+                                                document.getElementById("MainContent_ContentPlaceHolder1_txt_4")
+                                                    .focus();
+                                                return false;
+                                            }
+
+                                        }
+                                        //dropdown TO SELECT CONTROL PLAN
+                                        //            if (document.getElementById("MainContent_ContentPlaceHolder1_dd_cplan").selectedIndex == '0') {
+
+                                        //                alert("Please select a Part Catagery form SELECT CONTROL PLAN");
+                                        //                document.getElementById("MainContent_ContentPlaceHolder1_dd_cplan").focus();
+                                        //                return false;
+                                        //            }
+
+                                        //dropdown list part catagery validation
+                                        if (document.getElementById("MainContent_ContentPlaceHolder1_dd_part_cat")
+                                            .selectedIndex == '0') {
+
+                                            alert("Please select a Part Catagery form SELECT PART CATEGERY");
+                                            document.getElementById("MainContent_ContentPlaceHolder1_dd_part_cat")
+                                                .focus();
+                                            return false;
+                                        }
+
+                                        //dropdown Item Categary validation
+                                        if (document.getElementById("MainContent_ContentPlaceHolder1_dd_item_cat")
+                                            .selectedIndex == '0') {
+
+                                            alert("Please select a Part Catagery form SELECT ITEM CATEGERY");
+                                            document.getElementById("MainContent_ContentPlaceHolder1_dd_item_cat")
+                                                .focus();
+                                            return false;
+                                        }
+
+                                        //FINISH WEIGHT 00 ENTRY
+                                        if (document.getElementById("MainContent_ContentPlaceHolder1_txt_finish_wght")
+                                            .value == "") {
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_finish_wght")
+                                                .value = "0.0";
+                                        }
+
+                                    }
+
+
+                                    //VALIDATION ENDS HERE
+
+                                    //  validatiing item discription
+                                    function chk_item() {
+                                        var val = document.getElementById("MainContent_ContentPlaceHolder1_txtitem")
+                                            .value;
+                                        //alert('working' + val);
+
+                                        var xmlhttp;
+                                        if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+                                            xmlhttp = new XMLHttpRequest();
+                                        } else { // code for IE6, IE5
+                                            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                                        }
+                                        xmlhttp.onreadystatechange = function () {
+                                            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                                                //    alert('status ok');
+                                                //document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+                                                document.getElementById("MainContent_ContentPlaceHolder1_lbl_error")
+                                                    .innerHTML = xmlhttp.responseText;
+                                                flag_rec_exists = document.getElementById(
+                                                    "MainContent_ContentPlaceHolder1_lbl_error").innerText;
+                                                // alert('status downloaded' + flag_rec_exists);
+
+                                            }
+                                        }
+                                        xmlhttp.open("POST.html", "validate_item_discrip.aspx?val=" + val, true);
+                                        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                                        xmlhttp.send();
+                                        //  alert('done');
+                                    }
+
+
+
+                                    function changelabel() {
+
+                                        // document.getElementById("MainContent_ContentPlaceHolder1_lbl_1").innerHTML = 'text';
+                                        var lbl1 = document.getElementById("MainContent_ContentPlaceHolder1_lbl_1");
+                                        var lbl2 = document.getElementById("MainContent_ContentPlaceHolder1_lbl_2");
+                                        var lbl3 = document.getElementById("MainContent_ContentPlaceHolder1_lbl_3");
+                                        var lbl4 = document.getElementById("MainContent_ContentPlaceHolder1_lbl_4");
+                                        var tb1 = document.getElementById("MainContent_ContentPlaceHolder1_txt_1");
+                                        var tb2 = document.getElementById("MainContent_ContentPlaceHolder1_txt_2");
+                                        var tb3 = document.getElementById("MainContent_ContentPlaceHolder1_txt_3");
+                                        var tb4 = document.getElementById("MainContent_ContentPlaceHolder1_txt_4");
+                                        var ddunit1 = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_ddunit1");
+                                        var ddunit2 = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_ddunit2");
+                                        var ddunit3 = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_ddunit3");
+                                        var ddunit4 = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_ddunit4");
+                                        var imgbox = document.getElementById("shape_image");
+
+                                        var mat_type = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_dd_type_raw_material");
+                                        //alert(mat_type.options[mat_type.selectedIndex].value);
+                                        //.options[parm.selectedIndex].value
+
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Round") {
+                                            lbl1.innerHTML = 'Diameter';
+                                            lbl2.innerHTML = 'Length';
+                                            tb1.style.display = "block";
+                                            tb2.style.display = "block";
+                                            ddunit1.style.display = "block";
+                                            ddunit2.style.display = "block";
+                                            imgbox.style.display = "block";
+                                            lbl3.innerHTML = '';
+                                            tb3.style.display = "none";
+                                            ddunit3.style.display = "none";
+                                            lbl4.innerHTML = '';
+                                            tb4.style.display = "none";
+                                            ddunit4.style.display = "none";
+                                            tb3.value = '0.00';
+                                            tb4.value = '0.00';
+
+                                            imgbox.src = 'weight-calculator/round.jpg';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Square") {
+                                            lbl1.innerHTML = 'Width';
+                                            lbl2.innerHTML = 'Length';
+                                            tb1.style.display = "block";
+                                            tb2.style.display = "block";
+                                            ddunit1.style.display = "block";
+                                            ddunit2.style.display = "block";
+                                            lbl3.innerHTML = '';
+                                            tb3.style.display = "none";
+                                            ddunit3.style.display = "none";
+
+
+                                            lbl4.innerHTML = '';
+                                            tb4.style.display = "none";
+                                            ddunit4.style.display = "none";
+                                            tb3.value = '0.00';
+                                            tb4.value = '0.00';
+
+                                            imgbox.src = 'weight-calculator/sqr.jpg';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Rectangle") {
+                                            lbl1.innerHTML = 'Thickness';
+                                            lbl2.innerHTML = 'Width';
+                                            lbl3.innerHTML = 'Length';
+                                            tb1.style.display = "block";
+                                            tb2.style.display = "block";
+                                            tb3.style.display = "block";
+                                            ddunit1.style.display = "block";
+                                            ddunit2.style.display = "block";
+                                            ddunit3.style.display = "block";
+
+                                            lbl4.innerHTML = '';
+                                            tb4.style.display = "none";
+                                            ddunit4.style.display = "none";
+                                            tb3.value = '';
+                                            tb4.value = '0.00';
+
+                                            imgbox.src = 'weight-calculator/rect.jpg';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Hexagonal") {
+                                            lbl1.innerHTML = 'Diameter Across flat';
+                                            lbl2.innerHTML = 'Length';
+                                            tb1.style.display = "block";
+                                            tb2.style.display = "block";
+                                            ddunit1.style.display = "block";
+                                            ddunit2.style.display = "block";
+                                            lbl3.innerHTML = '';
+                                            tb3.style.display = "none";
+                                            ddunit3.style.display = "none";
+                                            lbl4.innerHTML = '';
+                                            tb4.style.display = "none";
+                                            ddunit4.style.display = "none";
+                                            tb3.value = '0.00';
+                                            tb4.value = '0.00';
+                                            imgbox.src = 'weight-calculator/hexagon.jpg';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Octagonal") {
+                                            lbl1.innerHTML = 'Diameter Across flat';
+                                            lbl2.innerHTML = 'Length';
+                                            tb1.style.display = "block";
+                                            tb2.style.display = "block";
+                                            ddunit1.style.display = "block";
+                                            ddunit2.style.display = "block";
+                                            lbl3.innerHTML = '';
+                                            tb3.style.display = "none";
+                                            ddunit3.style.display = "none";
+                                            lbl4.innerHTML = '';
+                                            tb4.style.display = "none";
+                                            ddunit4.style.display = "none";
+                                            tb3.value = '0.00';
+                                            tb4.value = '0.00';
+                                            imgbox.src = 'weight-calculator/octagon.jpg';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Sheet") {
+                                            lbl1.innerHTML = 'Thickness';
+                                            lbl2.innerHTML = 'Width';
+                                            lbl3.innerHTML = 'Length';
+                                            tb1.style.display = "block";
+                                            tb2.style.display = "block";
+                                            tb3.style.display = "block";
+                                            ddunit1.style.display = "block";
+                                            ddunit2.style.display = "block";
+                                            ddunit3.style.display = "block";
+
+                                            lbl4.innerHTML = '';
+                                            tb4.style.display = "none";
+                                            ddunit4.style.display = "none";
+                                            tb3.value = '';
+                                            tb4.value = '0.00';
+
+                                            imgbox.src = 'weight-calculator/sheet.jpg';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Plate") {
+                                            lbl1.innerHTML = 'Thickness';
+                                            lbl2.innerHTML = 'Width';
+                                            lbl3.innerHTML = 'Length';
+                                            tb3.style.display = "block";
+                                            ddunit3.style.display = "block";
+
+                                            lbl4.innerHTML = '';
+                                            tb4.style.display = "none";
+                                            ddunit4.style.display = "none";
+                                            tb3.value = '';
+                                            tb4.value = '0.00';
+                                            imgbox.src = 'weight-calculator/sheet.jpg';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Tubular") {
+                                            lbl1.innerHTML = 'Outer Diameter';
+                                            lbl2.innerHTML = 'Wall';
+                                            lbl3.innerHTML = 'Length';
+                                            tb3.style.display = "block";
+                                            ddunit3.style.display = "block";
+
+                                            lbl4.innerHTML = '';
+                                            tb4.style.display = "none";
+                                            ddunit4.style.display = "none";
+                                            tb3.value = '0.00';
+                                            tb4.value = '0.00';
+                                            imgbox.src = 'weight-calculator/tubular.jpg';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Ring") {
+                                            lbl1.innerHTML = 'Outer Diameter';
+                                            lbl2.innerHTML = 'Inner Diameter';
+                                            lbl3.innerHTML = 'Thickness';
+                                            tb3.style.display = "block";
+                                            ddunit3.style.display = "block";
+                                            imgbox.src = 'weight-calculator/ring.jpg';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Pipe Round") {
+                                            lbl1.innerHTML = 'Outer Diameter';
+                                            0
+                                            lbl2.innerHTML = 'Wall Thickness';
+                                            lbl3.innerHTML = 'Length';
+                                            tb1.style.display = "block";
+                                            tb2.style.display = "block";
+                                            tb3.style.display = "block";
+                                            ddunit1.style.display = "block";
+                                            ddunit2.style.display = "block";
+                                            ddunit3.style.display = "block";
+
+                                            lbl4.innerHTML = '';
+                                            tb4.style.display = "none";
+                                            ddunit4.style.display = "none";
+                                            tb3.value = '';
+                                            tb4.value = '0.00';
+                                            imgbox.src = 'weight-calculator/tubular.jpg';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Pipe Square") {
+                                            lbl1.innerHTML = 'Width Across Flat';
+                                            lbl2.innerHTML = 'Wall Thickness';
+                                            lbl3.innerHTML = 'Length';
+                                            tb1.style.display = "block";
+                                            tb2.style.display = "block";
+                                            tb3.style.display = "block";
+                                            ddunit1.style.display = "block";
+                                            ddunit2.style.display = "block";
+                                            ddunit3.style.display = "block";
+
+                                            lbl4.innerHTML = '';
+                                            tb4.style.display = "none";
+                                            ddunit4.style.display = "none";
+                                            tb3.value = '';
+                                            tb4.value = '0.00';
+                                            imgbox.src = 'weight-calculator/sqr%20pipe.jpg';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Pipe Rectangular") {
+                                            lbl1.innerHTML = 'Width ';
+                                            lbl2.innerHTML = 'Height';
+                                            lbl3.innerHTML = 'Wall Thickness';
+                                            lbl4.innerHTML = 'Length';
+                                            tb1.style.display = "block";
+                                            tb2.style.display = "block";
+                                            tb3.style.display = "block";
+                                            tb4.style.display = "block";
+                                            ddunit1.style.display = "block";
+                                            ddunit2.style.display = "block";
+                                            ddunit3.style.display = "block";
+                                            ddunit4.style.display = "block";
+                                            tb4.value = '';
+                                            imgbox.src = 'weight-calculator/rect%20pipe.jpg';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Angle") {
+                                            lbl1.innerHTML = 'Width 1 ';
+                                            lbl2.innerHTML = 'Width 2';
+                                            lbl3.innerHTML = 'Wall Thickness';
+                                            lbl4.innerHTML = 'Length';
+                                            tb1.style.display = "block";
+                                            tb2.style.display = "block";
+                                            tb3.style.display = "block";
+                                            tb4.style.display = "block";
+                                            ddunit1.style.display = "block";
+                                            ddunit2.style.display = "block";
+                                            ddunit3.style.display = "block";
+                                            ddunit4.style.display = "block";
+                                            tb4.value = '';
+                                            imgbox.src = 'weight-calculator/angle.jpg';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Chanel") {
+                                            lbl1.innerHTML = 'Width ';
+                                            lbl2.innerHTML = 'Height';
+                                            lbl3.innerHTML = 'Wall Thickness';
+                                            lbl4.innerHTML = 'Length';
+                                            tb1.style.display = "block";
+                                            tb2.style.display = "block";
+                                            tb3.style.display = "block";
+                                            tb4.style.display = "block";
+                                            ddunit1.style.display = "block";
+                                            ddunit2.style.display = "block";
+                                            ddunit3.style.display = "block";
+                                            ddunit4.style.display = "block";
+                                            tb4.value = '';
+                                            imgbox.src = 'channel.gif';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Tee") {
+                                            lbl1.innerHTML = 'Width ';
+                                            lbl2.innerHTML = 'Height';
+                                            lbl3.innerHTML = 'Wall Thickness';
+                                            lbl4.innerHTML = 'Length';
+                                            tb1.style.display = "block";
+                                            tb2.style.display = "block";
+                                            tb3.style.display = "block";
+                                            tb4.style.display = "block";
+                                            ddunit1.style.display = "block";
+                                            ddunit2.style.display = "block";
+                                            ddunit3.style.display = "block";
+                                            ddunit4.style.display = "block";
+                                            tb4.value = '';
+                                            imgbox.src = 'weight-calculator/tee.jpg';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Beam") {
+                                            lbl1.innerHTML = 'Width ';
+                                            lbl2.innerHTML = 'Height';
+                                            lbl3.innerHTML = 'Wall Thickness';
+                                            lbl4.innerHTML = 'Length';
+                                            tb1.style.display = "block";
+                                            tb2.style.display = "block";
+                                            tb3.style.display = "block";
+                                            tb4.style.display = "block";
+                                            ddunit1.style.display = "block";
+                                            ddunit2.style.display = "block";
+                                            ddunit3.style.display = "block";
+                                            ddunit4.style.display = "block";
+                                            tb4.value = '';
+                                            imgbox.src = 'weight-calculator/beam.jpg';
+
+                                        }
+                                        if (mat_type.options[mat_type.selectedIndex].value == "Assambly") {
+                                            //Hide unwanted controls...
+                                            document.getElementById("MainContent_ContentPlaceHolder1_lbl_1").innerHTML =
+                                                "";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_lbl_2").innerHTML =
+                                                "";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_lbl_3").innerHTML =
+                                                "";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_lbl_4").innerHTML =
+                                                "";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_1").style
+                                                .display = "none";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_2").style
+                                                .display = "none";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_3").style
+                                                .display = "none";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_4").style
+                                                .display = "none";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_ddunit1").style
+                                                .display = "none";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_ddunit2").style
+                                                .display = "none";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_ddunit3").style
+                                                .display = "none";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_ddunit4").style
+                                                .display = "none";
+                                            document.getElementById("shape_image").style.display = "none";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_1").value =
+                                                "0.0";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_2").value =
+                                                "0.0";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_3").value =
+                                                "0.0";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_4").value =
+                                                "0.0";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                                .value = "0.0";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_lblcutweight")
+                                                .innerHTML = "";
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                                .style.display = "none";
+                                            //hide unwanted controls ends here....
+
+                                        }
+
+                                        calculate();
+                                    }
+
+                                    //function to calculte material weight
+                                    function calculate() {
+                                        //alert('Calculating');
+                                        //  get_density();
+
+
+
+                                        if (document.getElementById("MainContent_ContentPlaceHolder1_dd_grade_raw_mat")
+                                            .selectedIndex == '0') {
+                                            var element = document.getElementById("header");
+                                            element.innerHTML = "Please Select an Metal Type.";
+                                            return false;
+                                        } else {
+                                            var element = document.getElementById("header");
+                                            element.innerHTML = "";
+                                            //return true;
+                                        }
+                                        var temp_cal;
+                                        txt1_calculate = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_txt_1").value;
+                                        txt2_calculate = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_txt_2").value;
+                                        txt3_calculate = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_txt_3").value;
+                                        txt4_calculate = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_txt_4").value;
+
+                                        txt_result = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_txt_cut_wght").value;
+
+
+
+                                        var mat_type_calculate = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_dd_type_raw_material");
+                                        var mat_raw_calculate = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_dd_grade_raw_mat");
+
+                                        var density = get_density(document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_dd_grade_raw_mat").selectedIndex);
+
+                                        //   alert('Calculating');
+
+
+                                        var val1, val2, val3;
+                                        var ddunit1 = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_ddunit1");
+                                        var ddunit2 = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_ddunit2");
+                                        var ddunit3 = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_ddunit3");
+                                        var ddunit4 = document.getElementById(
+                                            "MainContent_ContentPlaceHolder1_ddunit4");
+                                        var d_u1 = ddunit1.options[ddunit1.selectedIndex].value;
+                                        //                alert(d_u1);
+                                        var d_u2 = ddunit2.options[ddunit2.selectedIndex].value;
+                                        //                alert(d_u2)
+                                        var d_u3 = ddunit3.options[ddunit3.selectedIndex].value;
+                                        //                alert(d_u3)
+                                        var d_u4 = ddunit4.options[ddunit4.selectedIndex].value;
+                                        //                alert(d_u4)
+
+                                        val1 = DoLength(txt1_calculate, d_u1);
+                                        val2 = DoLength(txt2_calculate, d_u2);
+                                        val3 = DoLength(txt3_calculate, d_u3);
+                                        val4 = DoLength(txt4_calculate, d_u4);
+                                        //   alert('value'+ val1);
+
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Round") {
+                                            // alert('round');
+                                            // temp_cal = dd_unit1() * dd_unit1() * dd_unit2() * density / 1000000;
+                                            temp_cal = (val1 * val1 * 9.42 * (val2 / 12) * density) / 2.2046;
+
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                                .value = temp_cal.toFixed(6);
+
+                                        }
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Square") {
+
+                                            // Result = new String(value1 * value2 * value3 * noPieces * density);
+
+                                            temp_cal = (val1 * val1 * val2 * density) / 2.2046;
+
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                                .value = temp_cal.toFixed(6);
+
+
+                                            //        alert("square");
+                                            //                document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght").value = dd_unit1() * dd_unit1() * dd_unit2() * density / 1000000;
+
+                                        }
+
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Rectangle") {
+                                            // alert('rectangle');
+                                            temp_cal = (val1 * val2 * val3 * density) / 2.2046;
+
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                                .value = temp_cal.toFixed(6);
+
+                                        }
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Hexagonal") {
+                                            // String(value1 * value1 * 10.4 * (value3/12) * noPieces * density);
+
+
+                                            temp_cal = (val1 * val1 * 10.4 * (val2 / 12) * density) / 2.2046;
+
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                                .value = temp_cal.toFixed(6);
+
+                                        }
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Octagonal") {
+                                            //alert('Octagonal');
+                                            temp_cal = (val1 * val1 * 10.07 * (val2 / 12) * density) / 2.2046;
+
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                                .value = temp_cal.toFixed(6);
+
+
+                                            //                temp_cal = (val1 * val1 * 11.2 * (val2 / 12) * density) / 2.2046;
+
+                                            //                document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght").value = temp_cal.toFixed(4);
+
+                                        }
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Sheet") {
+                                            //value1 * value2 * value3 * noPieces * density
+                                            temp_cal = (val1 * val2 * val3 * density) / 2.2046;
+
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                                .value = temp_cal.toFixed(6);
+
+
+                                        }
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Pipe Round") {
+                                            //37.7 * (value1 - value2) * value2 * (value3/12) * noPieces * density);
+                                            temp_cal = 37.7 * (val1 - val2) * val2 * (val3 / 12) * density / 2.2046;
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                                .value = temp_cal.toFixed(6);
+
+                                        }
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Pipe Square") {
+                                            //48.0 * (value1 - value2) * value2 * (value3/12) * noPieces * density);
+
+                                            temp_cal = 48.0 * (val1 - val2) * val2 * (val3 / 12) * density / 2.2046;
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                                .value = temp_cal.toFixed(6);
+                                        }
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Pipe Rectangular") {
+                                            //  alert('pipe rectangular');
+                                            //  temp_cal = (val1 * val2 * val3 * density) / 2.2046
+                                            var mat_external, mat_internal;
+                                            mat_external = (val1 * val2 * val4 * density) / 2.2046;
+                                            mat_internal = ((val1 - (val3 * 2)) * (val2 - (val3 * 2)) * val4 *
+                                                density) / 2.2046;
+                                            temp_cal = mat_external - mat_internal;
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                                .value = temp_cal.toFixed(6);
+
+
+
+                                        }
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Angle") {
+
+
+                                            temp_cal = ((val1 * val2 * val4 * density) / 2.2046) - (((val1 - val3) * (
+                                                val2 - val3) * val4 * density) / 2.2046);
+
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                                .value = temp_cal.toFixed(6);
+
+
+
+                                        }
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Chanel") {
+
+                                            temp_cal = ((val1 * val2 * val4 * density) / 2.2046) - (((val1 - (val3 *
+                                                2)) * (val2 - val3) * val4 * density) / 2.2046);
+
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                                .value = temp_cal.toFixed(6);
+
+
+                                        }
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Tee") {
+
+                                            var y_tee, x_tee, z_tee;
+                                            x_tee = val1 - val3;
+                                            y_tee = (val2 - val3);
+                                            temp_cal = ((val1 * val2 * val4 * density) / 2.2046) - (x_tee * y_tee *
+                                                val4 * density) / 2.2046;
+
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                                .value = temp_cal.toFixed(6);
+
+                                        }
+
+
+                                        if (mat_type_calculate.options[mat_type_calculate.selectedIndex].value ==
+                                            "Beam") {
+                                            var y_beam, x_beam;
+                                            x_beam = val1 - val3;
+                                            y_beam = val2 - (2 * val3);
+                                            temp_cal = ((val1 * val2 * val4 * density) / 2.2046) - (x_beam * y_beam *
+                                                val4 * density) / 2.2046;
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                                .value = temp_cal.toFixed(6);
+                                        }
+
+                                        document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght").value =
+                                            document.getElementById("MainContent_ContentPlaceHolder1_txt_cut_wght")
+                                            .value * 1000;
+
+                                    }
+                                    // validate only number in calculator textbox
+                                    function validate_num(e) {
+
+                                        var evt = (e) ? e : window.event;
+                                        var key = (evt.keyCode) ? evt.keyCode : evt.which;
+                                        if (key != null) {
+                                            key = parseInt(key, 10);
+                                            if ((key < 48 || key > 57) && (key < 96 || key > 105)) {
+                                                if (!IsUserFriendlyChar(key, "Decimals")) {
+                                                    return false;
+                                                }
+                                            } else {
+                                                if (evt.shiftKey) {
+                                                    return false;
+                                                }
+                                            }
+                                        }
+                                        return true;
+                                    }
+
+                                    // Function to check for user friendly keys  
+                                    //------------------------------------------
+                                    function IsUserFriendlyChar(val, step) {
+                                        // Backspace, Tab, Enter, Insert, and Delete  
+                                        if (val == 8 || val == 9 || val == 13 || val == 45 || val == 46) {
+                                            return true;
+                                        }
+                                        // Ctrl, Alt, CapsLock, Home, End, and Arrows  
+                                        if ((val > 16 && val < 21) || (val > 34 && val < 41)) {
+                                            return true;
+                                        }
+                                        if (step == "Decimals") {
+                                            if (val == 190 || val == 110) { //Check dot key code should be allowed
+                                                return true;
+                                            }
+                                        }
+                                        // The rest  
+                                        return false;
+                                    }
+                                    //validate calculator textbox ends here......
+
+
+
+
+
+
+
+
+                                    function get_density() {
+                                        var val = 'EN-19';
+                                        var ret_val = '';
+                                        //alert('working' + val);
+
+                                        var xmlhttp;
+                                        if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+                                            xmlhttp = new XMLHttpRequest();
+                                        } else { // code for IE6, IE5
+                                            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                                        }
+                                        xmlhttp.onreadystatechange = function () {
+                                            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                                                alert('status ok');
+                                                //document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+                                                ret_val = xmlhttp.responseText;
+
+                                                //   flag_rec_exists = document.getElementById("MainContent_ContentPlaceHolder1_lbl_error").innerText;
+                                                // alert('status downloaded' + flag_rec_exists);
+
+                                            }
+                                        }
+                                        xmlhttp.open("POST.html", "return density to itemmaster.aspx?raw_metal=" + val,
+                                            true);
+                                        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                                        xmlhttp.send();
+                                        alert("Density =" + ret_val);
+                                    }
+
+                                    //Function to get density against dropdownlist
+                                    function get_density(dd_index) {
+                                        //   alert('inside density');
+                                        return metal_density[dd_index - 1];
+                                        alert('inside density');
+
+                                    }
+
+                                    //DENSITY AS SEQUENCE ORDER 
+
+                                    var metal_density = new Array;
+                                    metal_density.push('0.10000');
+                                    metal_density.push('0.30800');
+                                    metal_density.push('0.28000');
+                                    metal_density.push('0.25600');
+                                    metal_density.push('0.32300');
+                                    metal_density.push('0.28000');
+                                    metal_density.push('0.28000');
+                                    metal_density.push('0.28000');
+                                    metal_density.push('0.28000');
+                                    metal_density.push('1.40000');
+                                    metal_density.push('0.28600');
+                                    metal_density.push('0.28600');
+                                    metal_density.push('0.28600');
+                                    metal_density.push('0.32100');
+                                    metal_density.push('0.30400');
+                                    metal_density.push('0.30400');
+                                    metal_density.push('0.30500');
+                                    metal_density.push('0.28300');
+                                    metal_density.push('1.00000');
+                                    metal_density.push('1.40000');
+                                    metal_density.push('1.40000');
+                                    metal_density.push('0.37900');
+                                    metal_density.push('0.28600');
+                                    metal_density.push('0.28600');
+                                    metal_density.push('0.28600');
+                                    metal_density.push('0.28600');
+                                    metal_density.push('0.28600');
+                                    metal_density.push('0.28600');
+                                    metal_density.push('0.28600');
+                                    metal_density.push('0.28600');
+                                    metal_density.push('0.28600');
+                                    metal_density.push('0.28600');
+                                    metal_density.push('0.28600');
+                                    metal_density.push('0.28600');
+                                    metal_density.push('0.28300');
+                                    metal_density.push('0.28300');
+                                    metal_density.push('0.28000');
+                                    metal_density.push('0.28000');
+                                    metal_density.push('0.28000');
+                                    metal_density.push('0.28000');
+                                    metal_density.push('0.28000');
+                                    metal_density.push('0.28000');
+                                    metal_density.push('0.60000');
+
+
+
+
+                                    // ]]>
+                                </script>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Scripts Js End -->
+        </div>
+    </div>
+</body>
+
+</html>
